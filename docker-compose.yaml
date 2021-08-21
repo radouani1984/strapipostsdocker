@@ -1,7 +1,8 @@
 version: "3"
 services:
   backend:
-    image: strapi/strapi
+    build:
+      context: ./backend
     environment:
       DATABASE_CLIENT: mysql
       DATABASE_HOST: mysql
@@ -11,7 +12,8 @@ services:
       DATABASE_PASSWORD: strapi
       DATABASE_SSL: "false"
     volumes:
-      - ./backend:/srv/app
+      - ./backend:/usr/src/backend
+      - /usr/src/backend/node_modules
     ports:
       - "5100:1337"
     depends_on:
