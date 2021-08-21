@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Docker: Attach to Node",
+        "name": "Strapi",
         "type": "node",
         "request": "attach",
         "restart": true,
@@ -11,6 +11,16 @@
         "localRoot": "${workspaceFolder}/backend",
         "remoteRoot": "/usr/src/backend",
         "protocol": "inspector",       
+      },
+      {
+        "name":"Angular",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4000",
+        "webRoot": "${workspaceFolder}/frontend",
+        "sourceMapPathOverrides": {
+          "webpack:/*": "${webRoot}/*"
+        }
       }
     ]
   }

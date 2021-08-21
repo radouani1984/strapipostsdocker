@@ -15,8 +15,7 @@ services:
       - ./backend:/usr/src/backend
       # - /usr/src/backend/node_modules
     ports:
-      - "5200:1337"
-      - "9229:9229"
+      - "5000:1337"
       - "9230:9230"
     depends_on:
       - mysql
@@ -33,12 +32,11 @@ services:
       MYSQL_USER: strapi
       MYSQL_PASSWORD: strapi
 
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #   volumes:
-  #     - ./frontend:/usr/src/frontend
-  #     - /u/src/frontend/node_modules
-  #   ports:
-  #     - "5000:5000"
-  #     - "8229:8229"
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/usr/src/frontend
+      # - /u/src/frontend/node_modules
+    ports:
+      - "4000:5000"
