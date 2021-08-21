@@ -1,34 +1,35 @@
 {
-  "name": "app",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
-    "develop": "strapi develop",
+    "docker": "nodemon --inspect=0.0.0.0:9229 main.js",
+    "develop": "node --inspect=0.0.0.0:9229 ./node_modules/strapi/bin/strapi.js develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
   "devDependencies": {},
   "dependencies": {
+    "knex": "0.21.18",
+    "mysql": "^2.18.1",
     "strapi": "3.6.7",
     "strapi-admin": "3.6.7",
-    "strapi-utils": "3.6.7",
-    "strapi-plugin-content-type-builder": "3.6.7",
-    "strapi-plugin-content-manager": "3.6.7",
-    "strapi-plugin-users-permissions": "3.6.7",
-    "strapi-plugin-email": "3.6.7",
-    "strapi-plugin-upload": "3.6.7",
-    "strapi-plugin-i18n": "3.6.7",
     "strapi-connector-bookshelf": "3.6.7",
-    "knex": "0.95.10",
-    "mysql": "2.18.1"
+    "strapi-plugin-content-manager": "3.6.7",
+    "strapi-plugin-content-type-builder": "3.6.7",
+    "strapi-plugin-email": "3.6.7",
+    "strapi-plugin-i18n": "3.6.7",
+    "strapi-plugin-upload": "3.6.7",
+    "strapi-plugin-users-permissions": "3.6.7",
+    "strapi-utils": "3.6.7"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "4c80efa2-b862-4814-b58f-ab42fed4fd9c"
+    "uuid": "5430d5a4-cc7b-42ce-88e0-e1771e5e76cc"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
