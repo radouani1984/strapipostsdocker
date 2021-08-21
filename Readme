@@ -1,2 +1,6 @@
 mysqldump -u your_username -p --databases db_name1 db_name2 db_name3 > name_of_file.sql
 docker exec -it abf bash
+
+
+
+NODE_OPTIONS='--inspect=0.0.0.0:9229' 
