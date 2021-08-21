@@ -13,7 +13,7 @@ services:
     volumes:
       - ./backend:/srv/app
     ports:
-      - "1337:1337"
+      - "5100:1337"
     depends_on:
       - mysql
 
@@ -22,8 +22,18 @@ services:
     command: mysqld --default-authentication-plugin=mysql_native_password
     volumes:
       - ./data:/var/lib/mysql
+      - ./backup_db:/sql
     environment:
-      MYSQL_ROOT_PASSWORD: strapi-posts
+      MYSQL_ROOT_PASSWORD: strapi
       MYSQL_DATABASE: postdb
       MYSQL_USER: strapi
       MYSQL_PASSWORD: strapi
+
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/usr/src/frontend
+      - /usr/src/frontend/node_modules
+    ports:
+      - "5000:5000"
