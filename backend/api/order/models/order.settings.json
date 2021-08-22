@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order_date": {
+      "type": "date"
+    },
+    "product_items": {
+      "via": "order",
+      "collection": "product-item-cart"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Passed",
+        "Confirmed",
+        "Returned",
+        "Canceled"
+      ],
+      "default": "Passed"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "orders"
+    },
+    "address": {
+      "model": "address",
+      "via": "orders"
+    }
+  }
+}

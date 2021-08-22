@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_categories",
+  "info": {
+    "name": "bundle_product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "unit_price": {
+      "type": "float"
+    },
+    "bundle": {
+      "model": "bundle",
+      "via": "products"
+    },
+    "product": {
+      "via": "bundles",
+      "model": "product"
+    }
+  }
+}

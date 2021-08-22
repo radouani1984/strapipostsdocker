@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_variation_values",
+  "info": {
+    "name": "product_variation_values",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "additional_price": {
+      "type": "float"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "value": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "value"
+    },
+    "product_variation": {
+      "model": "product-variation",
+      "via": "values"
+    }
+  }
+}

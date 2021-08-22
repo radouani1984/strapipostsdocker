@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "bundles": {
+      "via": "product",
+      "collection": "product-category"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "sku"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "product_attributes": {
+      "via": "product",
+      "collection": "attributes-values"
+    },
+    "colors": {
+      "via": "product",
+      "collection": "product-color"
+    },
+    "variations": {
+      "via": "product",
+      "collection": "product-variation"
+    }
+  }
+}

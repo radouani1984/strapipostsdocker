@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_colors",
+  "info": {
+    "name": "product_color",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "color": {
+      "via": "products",
+      "model": "color"
+    },
+    "product": {
+      "via": "colors",
+      "model": "product"
+    },
+    "additional_price": {
+      "type": "float"
+    }
+  }
+}

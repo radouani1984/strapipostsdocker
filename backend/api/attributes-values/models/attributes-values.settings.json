@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attributes_values",
+  "info": {
+    "name": "product_attributes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "product": {
+      "via": "product_attributes",
+      "model": "product"
+    },
+    "attribute": {
+      "model": "attributes",
+      "via": "products"
+    }
+  }
+}

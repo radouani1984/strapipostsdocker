@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_variations",
+  "info": {
+    "name": "product_variation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "via": "variations",
+      "model": "product"
+    },
+    "variation": {
+      "model": "variation",
+      "via": "products"
+    },
+    "values": {
+      "via": "product_variation",
+      "collection": "product-variation-values"
+    }
+  }
+}

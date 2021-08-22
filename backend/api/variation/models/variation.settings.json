@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variations",
+  "info": {
+    "name": "variation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "products": {
+      "via": "variation",
+      "collection": "product-variation"
+    }
+  }
+}

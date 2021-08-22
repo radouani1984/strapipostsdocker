@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "name": "category",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "parent_id": {
+      "collection": "category"
+    },
+    "code": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "code"
+    },
+    "bundles": {
+      "via": "categories",
+      "collection": "bundle"
+    }
+  }
+}

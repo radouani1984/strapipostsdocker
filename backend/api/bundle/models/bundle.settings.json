@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bundles",
+  "info": {
+    "name": "bundle",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "float"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "sku"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "bundles",
+      "dominant": true
+    },
+    "products": {
+      "via": "bundle",
+      "collection": "product-category"
+    },
+    "tags": {
+      "via": "bundles",
+      "collection": "tags"
+    }
+  }
+}
